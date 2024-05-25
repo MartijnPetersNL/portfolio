@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset= "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+</head>
+<body>
+    <h1> Martijn Peter Porfolio </h1>
+    <p> keep in mind that this website is still in early acccess, layout could change</p>
+    <menu>
+        <ul>
+        <li> about my </li>
+        <li> website collabs</li>
+        <li> graphic design</li>
+         <li> programming </li>
+         <li> Machines</li>
+        </ul>
+    </menu>
+    <p> other languages: dutch, german</p> 
+</body>
+</html>
