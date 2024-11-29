@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script type="text/javascript" src="gewichtomrekenen.js"></script>
+    <title>Gewicht omrekenen</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Weight converter</h1>
+      <form action="#">
+        <input
+          type="number"
+          id="gewicht-input"
+          placeholder="typ aantal kilogram"
+          oninput="omrekenen(this.value)"
+          onchange="omrekenen(this.value)"
+        />
+        <br />
+        <button id="generator">Go</button>
+        <button id="copy">copy</button>
+        <h2>Pounds</h2>
+        <!-- 1 kg = 2.20462262 pounds-->
+        <input type="text" id="poundsOutput" />
+        <h2>Ounces</h2>
+        <!-- 1KG = 35.2739619 ounces-->
+        <input type="text" id="ouncesOutput" />
+        <h2>Grams</h2>
+        <!-- 1kg = 1000 grams-->
+        <input type="text" id="gramsOutput" />
+      </form>
+    </div>
+    <script>
+      //event listerners altijd onderaan pagina
+      let copyButton = document.querySelector("#copy");
+      copyButton.addEventListener("click", copyString);
+      let gewichtInput = document.getElementById("gewicht-input");
+      gewichtInput.addEventListener("gewicht-input", omrekenen());
+    </script>
+  </body>
+</html>

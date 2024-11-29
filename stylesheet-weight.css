@@ -1,0 +1,45 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1,
+h2 {
+  color: white;
+  text-align: center;
+}
+h2 {
+  font-size: 1em;
+}
+input {
+  border-radius: 10%;
+  text-align: left;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#main-container {
+  background-color: rgb(71, 71, 71);
+  display: inline-block;
+  vertical-align: center;
+  padding: 2vw;
+}
+
+#pounds-container {
+  background-color: #0275d8;
+  border-radius: 10%;
+  padding: 1vw;
+  color: white;
+  margin-bottom: 2vh;
+}
+#ounces-container {
+  background-color: #5cb85c;
+  border-radius: 10%;
+  padding: 1vw;
+  color: white;
+  margin-bottom: 2vh;
+}
+#grams-container {
+  background-color: #d9534f;
+  border-radius: 10%;
+  padding: 1vw;
+  color: white;
+  margin-bottom: 2vh;
+}

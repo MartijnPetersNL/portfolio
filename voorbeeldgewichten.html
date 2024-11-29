@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kilograms to other unis Converter</title>
+    <script type="text/javascript" src="voorbeeldgewicht.js"></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <!-- Te done Prior: zorgen geen negatieve getal input in kan vullen of omzetten naar positief-->
+  <body>
+    <div id="main-container">
+      <h1>Weight Converter</h1>
+      <p>
+        <input
+          id="inputKilograms"
+          min="0"
+          type="number"
+          placeholder="Kilograms"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+          oninput="weightConverter(this.value) "
+          onchange="weightConverter(this.value) "
+        />
+        <!-- event.charcode .... 48 tot en 57 zijn de valide karakter nummers -->
+      </p>
+      <div id="pounds-container">
+        <p>Pounds: <br /><span id="outputpounds"></span></p>
+      </div>
+      <div id="ounces-container">
+        <p>Ounces: <br /><span id="outputounces"></span></p>
+      </div>
+      <div id="grams-container">
+        <p>Grams: <br /><span id="outputgrams"></span></p>
+      </div>
+    </div>
+
+    <script>
+      /*
+      function weightConverter(valNum) {
+        document.getElementById("outputKilograms").innerHTML = valNum / 2.2046;
+        ocument.getElementById("outputounces").innerHTML = valNum * 35.2739619;
+      }
+        */
+    </script>
+  </body>
+</html>
