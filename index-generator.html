@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <!-- <script src="wachtwoordgenerator.js"></script> -->
+    <title>Wachtwoord generator</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Random Password Generator</h1>
+      <div class="display">
+        <form>
+          <input type="text" id="password" />
+        </form>
+        <br />
+
+        <button id="generator" onclick="createPassword()">Generate</button>
+        <button id="copy" onclick="copyString()">copy</button>
+        <br />
+        <div class="checkboxes-container">
+          <input
+            type="checkbox"
+            id="uppercase"
+            name="checkbox1"
+            style="float: right"
+            class="keuze"
+          />
+          <!-- <label for="wachtwoordlengte"> Lengte</label><br />
+          <input type="number" id="wachtwoordlengte" />  -->
+          <label for="uppercase"> Include Uppercase Letters</label><br />
+          <input
+            type="checkbox"
+            id="lowercase"
+            name="checkbox2"
+            style="float: right"
+            class="keuze"
+          />
+          <label for="uppercase"> Include Lowercase Letters</label><br />
+          <input
+            type="checkbox"
+            id="numbers"
+            name="checkbox3"
+            style="float: right"
+            class="keuze"
+          />
+          <label for="uppercase"> Include numbers</label><br />
+          <input
+            type="checkbox"
+            id="symbols"
+            name="checkbox4"
+            style="float: right"
+            class="keuze"
+          />
+          <label for="uppercase"> Include Symbols</label><br />
+          <!-- knop minimaal aantal en maximaal aantal cijfers-->
+          <label for="nummeraantal">lengte</label>
+          <input type="number" min="1" max="15" id="lengtewachtwoord" />
+        </div>
+      </div>
+      <script>
+        const passwordBox = document.getElementById("password");
+        // let lengte = 13;
+
+        const upperCase_tekens = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowerCase_tekens = "abcdefghijklmnopqrstuvwxyz";
+        const number_tekens = "0123456789";
+        const symbol_tekens = "!@#$%^&*(){}[]=<>/,.";
+
+        let NumberAmount = document.querySelector("#lengtewachtwoord"); //is dit een string? nee
+        let Uppercase_box = document.querySelector("#uppercase");
+        let LowerCase_box = document.querySelector("#lowercase");
+        let Numbers_box = document.querySelector("#numbers");
+        let Symbols_box = document.querySelector("#symbols");
+        let Generator = document.querySelector("#generator");
+
+        Generator.addEventListener("click", createPassword);
+        const allChars =
+          wachtwoordlengte + lowerCase_tekens + number_tekens + symbol_tekens;
+        let CopyButton = document.querySelector("#copy");
+        CopyButton.addEventListener("click", copyString);
+        function createPassword() {
+          let password = "";
+          let chars = "";
+          const checkboxAr = document.querySelectorAll(".keuze");
+          let checkboxCount = 0;
+
+          checkboxAr.forEach((checkbox) => {
+            if (checkbox.checked) {
+              let rand;
+              switch (checkbox.id) {
+                case "uppercase":
+                  checkboxCount++;
+                  rand = Math.floor(Math.random() * upperCase_tekens.length);
+                  password += upperCase_tekens.substring(rand, rand + 1);
+                  break;
+                case "lowercase":
+                  checkboxCount++;
+                  rand = Math.floor(Math.random() * lowerCase_tekens.length);
+                  password += lowerCase_tekens.substring(rand, rand + 1);
+                  break;
+                case "numbers":
+                  checkboxCount++;
+                  rand = Math.floor(Math.random() * number_tekens.length);
+                  password += number_tekens.substring(rand, rand + 1);
+                  break;
+                case "symbols":
+                  checkboxCount++;
+                  rand = Math.floor(Math.random() * symbol_tekens.length);
+                  password += symbol_tekens.substring(rand, rand + 1);
+                  break;
+              }
+              // let rand = Math.floor(Math.random());
+              // password += chars.substring(rand, rand + 1);
+            }
+          });
+
+          let lengte = NumberAmount.value;
+          let aanklikt = 0;
+          chars += Uppercase_box.checked ? upperCase_tekens : "";
+          chars += LowerCase_box.checked ? lowerCase_tekens : "";
+          chars += Numbers_box.checked ? number_tekens : "";
+          chars += Symbols_box.checked ? symbol_tekens : "";
+
+          // <= minder dan of gelijk aan, lengte + 1 als output
+          // < minder dan is de beste keuze
+
+          for (let i = 0; i < lengte - checkboxCount; i++) {
+            let rand = Math.floor(Math.random() * chars.length);
+            password += chars.substring(rand, rand + 1);
+          }
+
+          passwordBox.value = [...password]
+            .sort(() => Math.random() - 0.5)
+            .join("");
+        }
+
+        /*
+        while (wachtwoordlengte > password.length) {
+          password += allChars[Math.floor(Math.random() * allChars.length)];
+
+          passwordBox.value = password;
+        } */
+        //https://www.youtube.com/watch?v=XH7CzSZ-9gY
+      </script>
+      <script>
+        function copyString() {
+          var copypassword = document.getElementById("password");
+          copypassword.select();
+          navigator.clipboard.writeText(copypassword.value);
+          alert("gebruiker kopeerde wachtwoord");
+        }
+      </script>
+    </div>
+  </body>
+</html>
