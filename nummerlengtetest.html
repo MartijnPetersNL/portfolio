@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <h1>Nummer aantal test</h1>
+    <label for="nummeraantal">aantal nummers</label>
+    <input type="number" min="1" max="15" id="nummeraantal" />
+    <div class="length range__slider" data-min="4" data-max="32">
+      <div class="length__title field-title" data-length='0'>length:</div>
+    <script>
+      let NumberAmount = document.querySelector("#nummeraantal"); //is dit een string? nee
+      if ((NumberAmount) => 0) {
+        console.log("generator herkent nummeraantal");
+        console.log(typeof NumberAmount);
+      }
+      function nummergenerator() {
+        NumberAmount.value = nummergenerator.length;
+        console.log(nummergenerator);
+      }
+      //https://stackoverflow.com/questions/71622256/generating-a-random-number-from-user-input
+    </script>
+  </body>
+</html>

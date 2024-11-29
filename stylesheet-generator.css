@@ -1,0 +1,79 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #9000f8;
+}
+h1 {
+  color: #1f4f80;
+  padding-top: 2vw;
+  padding-left: 5vw;
+  padding-bottom: 3vw;
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem; /* 16 x 2 = 32px */
+}
+p {
+  font-size: 1.5rem;
+  max-width: 75ch; /* aantal karakter op een lijn max 75 */
+}
+input {
+  font-size: 0.6rem;
+  margin-left: 5vw;
+  margin-bottom: 2vw;
+}
+input[type="submit"] {
+  background-color: #9000f8;
+  color: white;
+  padding: 0.1vw;
+  border: #9000f8 4px solid;
+  border-radius: 10%;
+  cursor: pointer;
+}
+button {
+  background-color: #9000f8;
+  color: white;
+  font-size: 0.6rem;
+  padding: 0.1vw 2.1vw;
+  border: #9000f8 4px solid;
+  border-radius: 5%;
+  margin-right: 1vw;
+  margin-left: 5vw;
+  cursor: pointer;
+}
+input[type="text"] {
+  border: #7d3b9f 2px solid;
+  border-radius: 10%;
+  margin-bottom: 1.2vw;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+}
+label {
+  display: block;
+}
+
+.main-container {
+  background-color: white;
+  margin: 12%;
+  width: 100%;
+  max-width: 700px;
+  padding-bottom: 1vw;
+  text-align: center;
+}
+.display {
+  width: 100%;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  background: white;
+}
+.checkboxes-container {
+  display: inline-block;
+  vertical-align: center;
+}
