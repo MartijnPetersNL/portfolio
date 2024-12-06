@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-chart Demo</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="multichart.js"></script>
+    <link href="styles-charts.css" rel="stylesheet"/>
+</head>
+<body>
+    <h1> Maffia Peters begroting 2023</h1>
+    <img src="flag_italian.png">
+    <div class="chart">
+       <div class="chart_types">
+        <button onclick="setChartType('bar')"> Bars</button>
+        <button onclick="setChartType('line')"> Line</button>
+        <button onclick="setChartType('doughnut')"> Doughnut</button>
+        <button onclick="setChartType('polarArea')"> PolarArea</button>
+        <button onclick="setChartType('radar')"> Radar</button>
+       </div>
+       <canvas id="multichart"></canvas>
+      </div>
+</body>
+</html>

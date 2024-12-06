@@ -1,0 +1,14 @@
+[
+    {"maand": "januarie", "winst": 1200},
+    {"maand": "februarie", "winst": 1210},
+    {"maand": "maart", "winst": 1250},
+    {"maand": "april", "winst": 1300},
+    {"maand": "april", "winst": 1700},
+    {"maand": "juni", "winst": 1550},
+    {"maand": "juli", "winst": 1812},
+    {"maand": "augustus", "winst": 1901},
+    {"maand": "september", "winst": 1702},
+    {"maand": "oktober", "winst": 1507},
+    {"maand": "november", "winst": 1250},
+    {"maand": "december", "winst": 1800}
+]
