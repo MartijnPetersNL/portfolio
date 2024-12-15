@@ -1,0 +1,22 @@
+SQL commands
+
+CREATE TABLE werknemers (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+	voornaam VARCHAR (20) NOT NULL,
+	achternaam VARCHAR (20) NOT NULL,
+	wachtwoord VARCHAR(255) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+aangemaakt_op DATETIME NOT NULL DEFAULT CURRENT_TIME,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE commentaar (
+ id INT(11) NOT NULL AUTO_INCREMENT,
+ voornaam VARCHAR(30) NOT NULL,
+ commentaar_bericht TEXT NOT NULL,
+ gemaakt_op DATETIME NOT NULL DEFAULT CURRENT_TIME,
+    werknemers_id INT(11) ,
+    PRIMARY KEY (id),
+	FOREIGN KEY (werknemers_id) REFERENCES werknemers (id) ON DELETE SET NULL
+);
+
