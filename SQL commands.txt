@@ -20,3 +20,26 @@ CREATE TABLE commentaar (
 	FOREIGN KEY (werknemers_id) REFERENCES werknemers (id) ON DELETE SET NULL
 );
 
+Werknemers tafel 
+INSERT INTO werknemers (voornaam, achternaam, wachtwoord, email) VALUES('Barry','Bosman','Kuipstation#12!','barrybosman@gmail.com');
+INSERT INTO werknemers (voornaam, achternaam, wachtwoord, email) VALUES('Maria','Jansen','Willyviking2024!','mariajansen@gmail.com');
+INSERT INTO werknemers (voornaam, achternaam, wachtwoord, email) VALUES('Gerrit','Klaver','!@232e2e1323@','gerritklaver@gmail.com');
+INSERT INTO werknemers (voornaam, achternaam, wachtwoord, email) VALUES('Micheal','Rutte','Kasperspook2102#!','michealrutte1987@gmail.com');
+UPDATE werknermers SET voornaam = 'Wilma' , wachtwoord = 'Qspelletjes2024@' WHERE id = 2
+DELETE FROM werknemers WHERE id = 4;
+INSERT INTO werknemers (voornaam, achternaam, wachtwoord, email) VALUES('Danielle','Rutte','Kasperspook2104#!','daniellerutte1987@gmail.com');
+INSERT into commentaar (voornaam,commentaar_bericht, werknemers_id) VALUES ('Gerrit', 'Dit is een test bericht' ,3);
+SELECT voornaam,commentaar_bericht FROM commentaar WHERE id=1;
+
+//gehele rij 
+SELECT * FROM commentaar WHERE werknemers_id = 3;
+
+//JOIN INNER functie
+SELECT * FROM werknemers INNER JOIN commentaar ON werknemers.id = commentaar.werknemers_id;
+
+//JOIN RIGHT functie
+SELECT * FROM werknemers RIGHT JOIN commentaar ON werknemers.id = commentaar.werknemers_id; 
+//JOIN LEFT functie
+SELECT * FROM werknemers LEFT JOIN commentaar ON werknemers.id = commentaar.werknemers_id; 
+
+
