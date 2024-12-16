@@ -8,5 +8,5 @@ try {
     $pdo = new PDO($dsn, $dbusername, $dbpassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    ech "Connectie gefaald: " . $e->getMessage();
+    echo "Connectie gefaald: " . $e->getMessage();
 }
