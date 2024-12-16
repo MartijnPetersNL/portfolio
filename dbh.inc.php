@@ -1,7 +1,7 @@
 <?php
 $dsn = "mysql:host=localhost;dbname=myfirstdatabase";
-$dbusername = "root";
-$dbpassword = "";
+$dbusername = "martijnFreeman";
+$dbpassword = "Halflife3confirmed2026!";
 
 try {
     //PHP data objects
