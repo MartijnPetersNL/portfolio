@@ -8,11 +8,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         require_once "dbh.inc.php";
-        $query = "INSERT INTO werknemers(voornaam,achternaam,wachtwoord,email) VALUES (?,?,?,?);";
+        $query = "INSERT INTO werknemers(voornaam,achternaam,wachtwoord,email) VALUES (:voornaam,:achternaam,:wachtwoord,:email);";
         // prepared statement for security against SQL injection
         $stmt = $pdo->prepare($query);
 
-        $stmt->execute([$voornaam, $achternaam, $wachtwoord, $email]);
+    
+$wachtwoordhashsterkte = [
+    'cost' => 12 
+]
+$hashedWW = password_hash($wachtwoord, PASSWORD_BCRYPT, $wachtwoordhashsterkte ); // Build in fuction
+
+        $stmt->bindParam(":voornaam", $voornaam);
+        $stmt->bindParam(":achternaam", $achternaam);
+        $stmt->bindParam(":wachtwoord", $hashedWW);
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
 
         // Manual close statement en Connectie 
         $stmt = null;
